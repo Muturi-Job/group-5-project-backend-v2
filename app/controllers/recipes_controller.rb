@@ -1,19 +1,29 @@
 class RecipesController < ApplicationController
     def index
+        # if session.include? :user_id
         recipes = Recipe.all
         render json: recipes
+    # else
+    #     render json: {errors: ["You are not logged in"]}, status: :unauthorized
+    # end
     end
 
     def show
+    # if session.include? :user_id
         recipe = find_recipe
         if recipe
           render json: recipe
         else
           render json: {error: "Recipe not found"}, status: :not_found
         end
+    # else
+    #     render json: {errors: ["You are not logged in"]}, status: :unauthorized  
+    # end
     end
 
     def update
+    # if session.include? :user_id
+
         recipe = find_recipe
         if recipe
             recipe.update!(recipe_params)
@@ -21,6 +31,9 @@ class RecipesController < ApplicationController
         else
             render json: {error: "Recipe not found"}, status: :not_found
         end
+      # else
+    #     render json: {errors: ["You are not logged in"]}, status: :unauthorized  
+    # end
     end
 
 
