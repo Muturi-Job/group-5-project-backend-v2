@@ -19,9 +19,14 @@ class UsersController < ApplicationController
     end
 
     def index
+    # if session.include? :user_id
         users = User.all
         render json: users, status: :ok
+    # else
+    #     render json: {errors: ["You are not logged in"]}, status: :unauthorized  
+    # end
     end
+
   
     private
     
