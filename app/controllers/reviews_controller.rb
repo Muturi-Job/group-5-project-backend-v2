@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
     def index
     # if session.include? :user_id
         reviews = Review.all
-        render json: reviews
+        render json: reviews, status: :ok
     # else
     #     render json: {errors: ["You are not logged in"]}, status: :unauthorized  
     # end
