@@ -4,6 +4,11 @@ class RecipeTagsController < ApplicationController
         render json: recipetag, status: :created
         
     end
+
+    def index
+        recipetag = RecipeTag.all
+        render json: recipetag, status: :ok
+    end
     
     private
     
