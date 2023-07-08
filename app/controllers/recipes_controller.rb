@@ -57,4 +57,6 @@ class RecipesController < ApplicationController
     def recipe_params
         params.permit(:title, :description, :procedure, :user_id, :image_url)
     end
+
+    
 end

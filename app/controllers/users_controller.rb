@@ -27,10 +27,28 @@ class UsersController < ApplicationController
     # end
     end
 
+    def update
+        # if session.include? :user_id
+            user = find_user
+            if user
+                user.update!(params[:username], contact: params[:contact], location: params[:location], bio: params[:bio])
+                render json: user
+            else
+                render json: {error: "Unable to update user "}, status: :unprocessable_entity
+            end
+         # else
+        #     render json: {errors: ["You are not logged in"]}, status: :unauthorized  
+        # end
+    end
   
     private
     
     def user_params
         params.permit(:username, :password, :password_confirmation, :contact, :image, :bio, :location)
     end
+
+    def find_user
+        User.find_by(id: session[:user_id])
+    end
+    
 end
