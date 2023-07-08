@@ -1,51 +1,50 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
-# User.create(
-#   contact: "john@example.com",
-#   location: "New York",
-#   bio: "Experienced chef with a passion for cooking.",
-#   username: "johndoe",
-#   password: "password",
-#   image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaEdNNSvf5Trfnucfdsfw1laaKmt3_lH6v0g&usqp=CAU"
-# )
+# RecipeTag.create(recipe_id: 1, tag_id: 1)
+# RecipeTag.create(recipe_id: 1, tag_id: 2)
+# RecipeTag.create(recipe_id: 2, tag_id: 1)
+# RecipeTag.create(recipe_id: 3, tag_id: 3)
+# RecipeTag.create(recipe_id: 4, tag_id: 2)
+# RecipeTag.create(recipe_id: 4, tag_id: 3)
+# RecipeTag.create(recipe_id: 5, tag_id: 1)
+# RecipeTag.create(recipe_id: 5, tag_id: 2)
+# RecipeTag.create(recipe_id: 6, tag_id: 3)
+# RecipeTag.create(recipe_id: 7, tag_id: 1)
 
-# User.create(
-#   contact: "jane@example.com",
-#   location: "Los Angeles",
-#   bio: "Creative chef specializing in fusion cuisine.",
-#   username: "janesmith",
-#   password: "password",
-#   image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaEdNNSvf5Trfnucfdsfw1laaKmt3_lH6v0g&usqp=CAU"
-# )
+# Recipe.create(title: "Chocolate Cake", description: "A delicious chocolate cake", procedure: "1. Mix ingredients, 2. Bake in oven", user_id: 1, image_url: "https://example.com/chocolate-cake.jpg")
+# Recipe.create(title: "Chicken Curry", description: "Spicy chicken curry recipe", procedure: "1. Marinate chicken, 2. Cook with spices", user_id: 2, image_url: "https://example.com/chicken-curry.jpg")
+# Recipe.create(title: "Pasta Carbonara", description: "Classic Italian pasta dish", procedure: "1. Boil pasta, 2. Mix with eggs and bacon", user_id: 1, image_url: "https://example.com/pasta-carbonara.jpg")
+# Recipe.create(title: "Vegetable Stir-Fry", description: "Healthy vegetable stir-fry recipe", procedure: "1. Chop vegetables, 2. Stir-fry in a pan", user_id: 3, image_url: "https://example.com/vegetable-stir-fry.jpg")
+# Recipe.create(title: "Baked Salmon", description: "Oven-baked salmon recipe", procedure: "1. Season salmon, 2. Bake in the oven", user_id: 2, image_url: "https://example.com/baked-salmon.jpg")
+# Recipe.create(title: "Cheeseburger", description: "Classic cheeseburger recipe", procedure: "1. Grill burger patty, 2. Assemble with cheese and toppings", user_id: 1, image_url: "https://example.com/cheeseburger.jpg")
+# Recipe.create(title: "Caesar Salad", description: "Refreshing Caesar salad recipe", procedure: "1. Toss lettuce with dressing, 2. Add croutons and Parmesan cheese", user_id: 3, image_url: "https://example.com/caesar-salad.jpg")
+# Recipe.create(title: "Mushroom Risotto", description: "Creamy mushroom risotto recipe", procedure: "1. Sauté mushrooms, 2. Cook rice with broth", user_id: 2, image_url: "https://example.com/mushroom-risotto.jpg")
+# Recipe.create(title: "Sushi Rolls", description: "Homemade sushi rolls recipe", procedure: "1. Prepare sushi rice, 2. Roll with desired fillings", user_id: 1, image_url: "https://example.com/sushi-rolls.jpg")
+# Recipe.create(title: "Banana Bread", description: "Easy banana bread recipe", procedure: "1. Mash bananas, 2. Mix with flour and bake", user_id: 3, image_url: "https://example.com/banana-bread.jpg")
 
-# User.create(
-#   contact: "michael@example.com",
-#   location: "Chicago",
-#   bio: "Gourmet chef with a focus on French cuisine.",
-#   username: "michaeljohnson",
-#   password: "password",
-#   image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTewu0DWuJHsd7YgCMfacBtpwwHanaN5Rz7Ug&usqp=CAU"
-# )
 
-# User.create(
-#   contact: "emily@example.com",
-#   location: "San Francisco",
-#   bio: "Plant-based chef passionate about healthy cooking.",
-#   username: "emilywilson",
-#   password: "password",
-#   image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_pjMsX-nsV2BovsstTtWM0cBmqW4eDY_Odg&usqp=CAU"
-# )
+# Review.create(user_id: 1, user_username: "john123", rating: 4.5, description: "Great recipe!", recipe_id: 1)
+# Review.create(user_id: 2, user_username: "emily22", rating: 3.8, description: "Tasty but could use more seasoning.", recipe_id: 2)
+# Review.create(user_id: 3, user_username: "alex90", rating: 5.0, description: "Amazing dish! Will make it again.", recipe_id: 3)
+# Review.create(user_id: 1, user_username: "john123", rating: 4.0, description: "Good, but a bit too spicy for my liking.", recipe_id: 2)
+# Review.create(user_id: 2, user_username: "emily22", rating: 4.2, description: "Delicious! Added some extra veggies.", recipe_id: 4)
+# Review.create(user_id: 3, user_username: "alex90", rating: 3.5, description: "Decent recipe, but could use more flavor.", recipe_id: 5)
+# Review.create(user_id: 1, user_username: "john123", rating: 5.0, description: "Perfection! Loved every bite.", recipe_id: 3)
+# Review.create(user_id: 2, user_username: "emily22", rating: 4.7, description: "Great combination of flavors.", recipe_id: 6)
+# Review.create(user_id: 3, user_username: "alex90", rating: 3.0, description: "Not my favorite, but still enjoyable.", recipe_id: 7)
+# Review.create(user_id: 1, user_username: "john123", rating: 4.5, description: "Impressive dish!", recipe_id: 4)
 
-# User.create(
-#   contact: "david@example.com",
-#   location: "London",
-#   bio: "Master sushi chef with years of experience.",
-#   username: "davidlee",
-#   password: "password",
-#   image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZtAz5l45T_VWC04mUqsxKgCfuc-01yeC5xQ&usqp=CAU"
-# )
+# Tag.create(name: "Dessert", description: "Sweet treats")
+# Tag.create(name: "Spicy", description: "Hot and flavorful")
+# Tag.create(name: "Healthy", description: "Nutritious and wholesome")
+# Tag.create(name: "Italian", description: "Italian cuisine")
+# Tag.create(name: "Comfort Food", description: "Satisfying and cozy")
+# Tag.create(name: "Seafood", description: "Delicious seafood dishes")
+# Tag.create(name: "Vegetarian", description: "Vegetarian-friendly recipes")
+# Tag.create(name: "Quick & Easy", description: "Fast and simple to make")
+# Tag.create(name: "Breakfast", description: "Morning meal ideas")
+# Tag.create(name: "Asian", description: "Asian-inspired dishes")
+
+# User.create(username: "john123", password_digest: "password1", contact: 1234567890, image: "https://example.com/john.jpg", bio: "Food enthusiast", location: "New York")
+# User.create(username: "emily22", password_digest: "password2", contact: 9876543210, image: "https://example.com/emily.jpg", bio: "Passionate cook", location: "Los Angeles")
+# User.create(username: "alex90", password_digest: "password3", contact: 5555555555, image: "https://example.com/alex.jpg", bio: "Adventurous eater", location: "Chicago")
+# User.create(username: "sarah15", password_digest: "password4", contact: 9999999999, image: "https://example.com/sarah.jpg", bio: "Baking enthusiast", location: "San Francisco")
+# User.create(username: "michael88", password_digest: "password5", contact: 1111111111, image: "https://example.com/michael.jpg", bio: "Food blogger", location: "Miami")
