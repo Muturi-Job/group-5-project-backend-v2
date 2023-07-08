@@ -29,17 +29,21 @@ class UsersController < ApplicationController
 
     def update
         # if session.include? :user_id
-            user = find_user
-            if user
-                user.update!(params[:username], contact: params[:contact], location: params[:location], bio: params[:bio])
-                render json: user
-            else
-                render json: {error: "Unable to update user "}, status: :unprocessable_entity
-            end
-         # else
-        #     render json: {errors: ["You are not logged in"]}, status: :unauthorized  
+        user = find_user
+        if user
+          if user.update(user_params)
+            render json: user
+          else
+            render json: { error: "Unable to update user" }, status: :unprocessable_entity
+          end
+        else
+          render json: { error: "User not found" }, status: :not_found
+        end
+        # else
+        #     render json: {errors: ["You are not logged in"]}, status: :unauthorized
         # end
-    end
+      end
+      
   
     private
     
