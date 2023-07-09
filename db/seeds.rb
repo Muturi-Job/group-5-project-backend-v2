@@ -42,17 +42,4 @@ recipes = Recipe.create([
   }
 ])
 
-# Create recipe tags
-recipe_tags = RecipeTag.create([
-  { recipe: recipes.first, tag: tags.first },
-  { recipe: recipes.second, tag: tags.second },
-  { recipe: recipes.second, tag: tags.third },
-  { recipe: recipes.third, tag: tags.first },
-  { recipe: recipes.third, tag: tags.third }
-])
 
-# Create reviews
-reviews = Review.create([
-  { user: users.first, rating: 4.5, description: "Delicious stir-fry!", recipe: recipes.first },
-  { user: users.second, rating: 5.0, description: "The chocolate cake was amazing!", recipe: recipes.second }
-])
