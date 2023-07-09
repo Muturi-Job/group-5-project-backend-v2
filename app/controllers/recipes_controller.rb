@@ -35,7 +35,7 @@ class RecipesController < ApplicationController
       # else
     #     render json: {errors: ["You are not logged in"]}, status: :unauthorized  
     # end
-    
+
     def create
         recipe = Recipe.create(recipe_params)
         if recipe.valid?
@@ -46,6 +46,15 @@ class RecipesController < ApplicationController
 
     end
 
+    def destroy
+        recipe = find_recipe
+        if recipe.valid?
+            recipe.destroy
+            head :no_content
+        else
+            render json: {error: "Recipe not found"}, status: :not_found
+        end
+    end
 
     private
 
