@@ -23,6 +23,16 @@ class RecipesController < ApplicationController
         end
     end
 
+    def create
+        recipe = Recipe.create(recipe_params)
+        if recipe.valid?
+            render json: recipe, status: :created
+        else
+            render json: {error: "Failed to create recipe"}, status: :unprocessable_entity
+        end
+
+    end
+
 
 
     private

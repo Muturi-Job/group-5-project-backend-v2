@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :reviews
   resources :recipe_tags
   resources :tags
-  resources :recipes
+  resources :recipes, only: [:create, :update, :show, :index]
   resources :users
   post '/signup', to: 'users#create'
   get '/me', to: 'users#show'
