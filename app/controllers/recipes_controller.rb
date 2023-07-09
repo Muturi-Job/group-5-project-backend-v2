@@ -35,17 +35,16 @@ class RecipesController < ApplicationController
       # else
     #     render json: {errors: ["You are not logged in"]}, status: :unauthorized  
     # end
-
+    
     def create
-        recipe = Recipe.new(recipe_params)
+        recipe = Recipe.create(recipe_params)
         if recipe.valid?
             render json: recipe, status: :created
         else
-            render json: {error: 'Invalid recipe'}, status: :unprocessable_entity
+            render json: {error: "Failed to create recipe"}, status: :unprocessable_entity
         end
 
     end
-
 
 
     private
