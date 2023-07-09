@@ -48,7 +48,7 @@ class RecipesController < ApplicationController
 
     def destroy
         recipe = find_recipe
-        if recipe.valid?
+        if recipe
             recipe.destroy
             head :no_content
         else
